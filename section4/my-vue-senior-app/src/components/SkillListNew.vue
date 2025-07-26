@@ -4,7 +4,7 @@
     <button type="button" @click="handleAddSkill">submit</button>
     <p v-if="customError" :class="{'errorText':!! customError}">{{ customError }}</p>
     <ul>
-        <li v-for="(skill, index) in modelValue">{{ skill }} <button @click="handleRemoveSkill(index)">remove</button></li>
+        <li v-for="(skill, index) in props.modelValue">{{ skill }} <button @click="handleRemoveSkill(index)">remove</button></li>
     </ul>
     <p v-if="props.modelValue.length === 0" style="color: #888;">No skills yet.</p>
   </div>
