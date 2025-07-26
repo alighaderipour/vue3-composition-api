@@ -2,7 +2,7 @@
 import { defineProps} from "vue";
 const props = defineProps({
   skills: {
-    default: () => []   // یعنی اگه پرنت skills نفرسته خودش آرایه خالی میشه
+    default: () => []
   }
 })
 
@@ -10,9 +10,13 @@ const props = defineProps({
 
 <template>
 <ul>
-  <li v-for="(skill, index) in props.skills" :key="index">
+  <div>
+    <p v-if="props.skills.length === 0">list is empty</p>
+    <li v-for="(skill, index) in props.skills" :key="index">
     {{skill}}
-  </li>
+    </li>
+  </div>
+
 </ul>
 </template>
 
