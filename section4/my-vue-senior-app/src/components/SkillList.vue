@@ -1,8 +1,10 @@
 <script setup lang="ts">
-interface Props {
-  skills: string[]
-}
-const props = defineProps<Props>()
+import { defineProps} from "vue";
+const props = defineProps({
+  skills: {
+    default: () => []   // یعنی اگه پرنت skills نفرسته خودش آرایه خالی میشه
+  }
+})
 
 </script>
 
