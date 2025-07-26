@@ -3,8 +3,8 @@ import SkillList from "../components/SkillList.vue";
 
 const routes = [
   { path: "/", redirect: "/skill_list" },
-  { path: "/skill", component: SkillList },
-  // { path: "/skilltwo", component: SkillTwo },
+  { path: "/skill_list", component: SkillList },
+
 ];
 
 const router = createRouter({
