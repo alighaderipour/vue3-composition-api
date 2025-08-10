@@ -1,9 +1,11 @@
 <script setup>
-import Hello from '@/components/Hello.vue'
+import Counter from '@/components/Counter.vue'
+import CounterTwo from '@/components/CounterTwo.vue'
 </script>
 
 <template>
-  <Hello />
+  <Counter />
+  <CounterTwo />
 </template>
 
 <style scoped></style>
