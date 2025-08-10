@@ -1,35 +1,24 @@
-<template>
-  <div>
-    <label for="n1">number 1 : </label>
-    <input name="n1" type="number" placeholder="type a number here" v-model="number1" />
-    <br />
-    <label for="n1">number 2 : </label>
-    <input name="n2" type="number" placeholder="type a number here" v-model="number2" />
-    <br />
-    <label for="sum">sum : </label>
-    <p>{{ sumTwoNumbers }}</p>
-    <label for="product">sum : </label>
-    <p>{{ productTwoNumbers }}</p>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-
-const number1 = ref<string>('')
-const number2 = ref<string>('')
-
-const sumTwoNumbers = computed(() => {
-  const n1 = Number(number1.value) || 0
-  const n2 = Number(number2.value) || 0
-  return n1 + n2
+import { ref, reactive } from 'vue'
+const user = reactive({
+  name: 'ali',
+  age: 34,
+  skills: [] as string[],
 })
-
-const productTwoNumbers = computed(() => {
-  const n1 = Number(number1.value) || 0
-  const n2 = Number(number2.value) || 0
-  return n1 * n2
-})
+const skill = ref<string>('')
+function addSkill() {
+  if (skill.value.trim()) {
+    user.skills.push(skill.value)
+    skill.value = ''
+  }
+}
 </script>
 
-<style scoped></style>
+<template>
+  <label for="addSkill"></label>
+  <input name="addSkill" type="text" placeholder="type any skill here" v-model="skill" />
+  <button type="button" @click="addSkill">Add Skill</button>
+  <ul>
+    <li v-for="skill in user.skills">{{ skill }}</li>
+  </ul>
+</template>
