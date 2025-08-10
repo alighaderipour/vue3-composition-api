@@ -1,9 +1,22 @@
-<script setup lang="ts">
-import Counter from "./components/Counter.vue"
+<script setup>
+
 </script>
 
 <template>
-  <Counter />
+  <header>
+
+
+    <div class="wrapper">
+      <Hello  />
+
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+      </nav>
+    </div>
+  </header>
+
+  <RouterView />
 </template>
 
 <style scoped>
