@@ -1,22 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-const counter = ref<number>(0)
+import { ref, onBeforeUpdate } from 'vue'
 
-function increment(step: number) {
-  counter.value += step
-}
+const message = ref('Hello')
 
-function decrement() {
-  counter.value--
-}
+onBeforeUpdate(() => {
+  console.log('🕒 Before update: message قرار است تغییر کند.')
+})
 </script>
 
 <template>
-  <div>
-    <p>{{ counter }}</p>
-    <button type="button" @click="increment(3)">increment</button>
-    <button type="button" @click="decrement">decrement</button>
-  </div>
+  <input v-model="message" />
+  <p>{{ message }}</p>
 </template>
-
-<style scoped></style>
