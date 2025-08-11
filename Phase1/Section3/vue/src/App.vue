@@ -1,24 +1,9 @@
 <script setup>
-
+import UserSkills from '@/components/UserSkills.vue'
 </script>
 
 <template>
-  <header>
-
-
-    <div class="wrapper">
-      <Hello  />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <UserSkills />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
